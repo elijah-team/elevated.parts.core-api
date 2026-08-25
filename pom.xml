@@ -10,7 +10,6 @@
 
 	<groupId>tripleo.elijah</groupId>
 	<artifactId>elevated-parts-core-api</artifactId>
-<!--	<version>${revision}</version>-->
 	<version>elevated-potential.l251121</version>
 
 	<properties>
@@ -38,19 +37,9 @@
 
 		<!--<maven.compiler.release>${base.java.version}</maven.compiler.release>-->
 
-		<!--<error.prone.version>2.31.0</error.prone.version>-->
+		<error.prone.version>2.42.0</error.prone.version> <!--!!-->
 
 	</properties>
-
-	<modules>
-		<module>./elevated-potential.core.queues</module>
-		<!--<module>./elevated-potential.fluffy.extra</module>-->
-		<module>./elevated-potential.s.g_l251121</module>
-		<module>./elevated-potential.s.debugflags_l251121</module>
-		<!--<module>./elevated-potential.parts.hooligan</module>-->
-		<!--<module>./elevated-potential.deps.mal</module>-->
-		<module>./xxx-elijah-core-api</module>
-	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -187,132 +176,8 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.jspecify</groupId>
-			<artifactId>jspecify</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.elijah-tng</groupId>
-			<artifactId>ghel-model-status</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.elijah-tng</groupId>
-			<artifactId>cegont-upper</artifactId>
-			<version>2025.04.21</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>mutiny</artifactId>
-			<version>3.1.0</version>
-		</dependency>
-
-		<!--
-		<dependency>
-			<groupId>org.clojure</groupId>
-			<artifactId>clojure</artifactId>
-			<version>1.12.3</version>
-		</dependency>
-		-->
-
-		<dependency>
-			<groupId>com.github.spotbugs</groupId>
-			<artifactId>spotbugs-annotations</artifactId>
-			<version>4.9.3</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>2.1.0-alpha1</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>2.1.0-alpha1</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.reactivex.rxjava3</groupId>
-			<artifactId>rxjava</artifactId>
-			<version>3.1.10</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.reactivestreams</groupId>
-			<artifactId>reactive-streams</artifactId>
-			<version>1.0.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.19.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.42</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jetbrains</groupId>
-			<artifactId>annotations</artifactId>
-			<version>26.0.2-1</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.auto.service</groupId>
-			<artifactId>auto-service-annotations</artifactId>
-			<version>1.1.1</version>
-			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-			<groupId>org.checkerframework</groupId>
-			<artifactId>checker-qual</artifactId>
-			<version>3.52.1</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>5.20.0</version>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
-
-	<!--for model status-->
-	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-	</repositories>
-
-	<scm>
-		<url>https://github.com/...</url>
-		<connection>scm:git:git@github.com:...</connection>
-	</scm>
-
 	<build>
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -405,7 +270,7 @@
 					</dependencies>
 					<configuration>
 						<configLocation>google_checks.xml</configLocation>
-<!--						<suppressionsLocation>./checkstyle-suppressions.xml</suppressionsLocation>-->
+						<!--						<suppressionsLocation>./checkstyle-suppressions.xml</suppressionsLocation>-->
 						<violationSeverity>warning</violationSeverity>
 						<failOnViolation>false</failOnViolation>
 						<consoleOutput>true</consoleOutput>
@@ -575,10 +440,238 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.6.1</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<!--<source>../xxx-model-status/src/main/java</source>-->
+								<!--<source>../xxx-annotations/src/main/java</source>-->
+								<!--<source>./dlog/src/main/java</source>-->
+								<source>./elijah-core-api/src/main/java</source>
+								<source>./src/main/java</source>
+								<source>./elijah-ek/src/main/java</source>
+								<source>./elijah-nextgen-outputstatement/src/main/java</source>
+								<source>./elijah-stateful/src/main/java</source>
+								<source>./elijah-util/src/main/java</source>
+								<source>./tripleo-reactive/src/main/java</source>
+								<source>./tripleo-small/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 
 		<!--<defaultGoal>install</defaultGoal>-->
 	</build>
+
+	<dependencies>
+
+		<dependency>
+			<!--            <groupId>tripleo.elijah</groupId>-->
+			<!--            <artifactId>elijah-cegont-upper</artifactId>-->
+			<groupId>com.github.elijah-tng</groupId>
+			<artifactId>cegont-upper</artifactId>
+			<version>2025.04.21</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jetbrains</groupId>
+					<artifactId>annotations</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.smallrye.reactive</groupId>
+					<artifactId>mutiny</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.commons</groupId>
+					<artifactId>commons-lang3</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>com.google.guava</groupId>-->
+		<!--			<artifactId>guava</artifactId>-->
+		<!--			<version>33.5.0-jre</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>org.jetbrains</groupId>-->
+		<!--			<artifactId>annotations</artifactId>-->
+		<!--			<version>26.0.1</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>commons-codec</groupId>-->
+		<!--			<artifactId>commons-codec</artifactId>-->
+		<!--			<version>1.19.0</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.google.auto.service</groupId>-->
+		<!--			<artifactId>auto-service-annotations</artifactId>-->
+		<!--			<version>1.1.1</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
+		<dependency>
+			<groupId>com.github.elijah-team</groupId>
+			<artifactId>epg_l251121</artifactId>
+			<version>f9da79f2ab</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.elijah-team</groupId>
+			<artifactId>ep-core-queues</artifactId>
+			<version>b7dca1b1a3</version>
+		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>tripleo.elijah</groupId>-->
+		<!--			<artifactId>elevated-potential.s.debugflags_l251121</artifactId>-->
+		<!--			&lt;!&ndash;            <version>${revision}</version>&ndash;&gt;-->
+		<!--			<version>elevated-potential.l251121</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
+		<dependency>
+			<groupId>org.jspecify</groupId>
+			<artifactId>jspecify</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.elijah-tng</groupId>
+			<artifactId>ghel-model-status</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.elijah-tng</groupId>
+			<artifactId>cegont-upper</artifactId>
+			<version>2025.04.21</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.smallrye.reactive</groupId>
+			<artifactId>mutiny</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!--
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>clojure</artifactId>
+			<version>1.12.3</version>
+		</dependency>
+		-->
+
+		<dependency>
+			<groupId>com.github.spotbugs</groupId>
+			<artifactId>spotbugs-annotations</artifactId>
+			<version>4.9.3</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.1.0-alpha1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.1.0-alpha1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.reactivex.rxjava3</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>3.1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.reactivestreams</groupId>
+			<artifactId>reactive-streams</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.19.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>26.0.2-1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.auto.service</groupId>
+			<artifactId>auto-service-annotations</artifactId>
+			<version>1.1.1</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>3.52.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.20.0</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<!--for model status-->
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<url>https://github.com/...</url>
+		<connection>scm:git:git@github.com:...</connection>
+	</scm>
 
 	<profiles>
 		<profile>
