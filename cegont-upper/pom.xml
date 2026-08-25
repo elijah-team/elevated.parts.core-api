@@ -8,6 +8,12 @@
 	<name>elijah-cegont-upper</name>
 	<url>https://github.com/elijah-tng/cegont-upper</url>
 
+	<parent>
+		<groupId>tripleo.elijah</groupId>
+		<artifactId>elevated.parts.core-api</artifactId>
+		<version>elevated-potential.l251121</version>
+	</parent>
+
 	<groupId>tripleo.elijah</groupId>
 	<artifactId>elijah-cegont-upper</artifactId>
 	<version>2025.04.21</version>
