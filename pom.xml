@@ -194,28 +194,6 @@
 			<artifactId>jspecify</artifactId>
 		</dependency>
 
-		<!--fixme: get rid of this; the answer is on gl; as well as what should be here-->
-		<dependency>
-			<groupId>tripleo.elijah</groupId>
-			<artifactId>elijah-cegont-upper</artifactId>
-			<version>2025.04.21</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.jetbrains</groupId>
-					<artifactId>annotations</artifactId>
-				</exclusion>
-				<exclusion>
-					<artifactId>byte-buddy</artifactId>
-					<groupId>net.bytebuddy</groupId>
-				</exclusion>
-			</exclusions>
-
-		</dependency>
-
 		<dependency>
 			<groupId>com.github.elijah-tng</groupId>
 			<artifactId>ghel-model-status</artifactId>
