@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>tripleo.elijah</groupId>
+    <artifactId>elevated-potential-core-api-xxx</artifactId>
+<!--    <version>${revision}</version>-->
+    <version>elevated-potential.l251121</version>
+
+    <properties>
+        <revision>elevated-potential.l251121</revision>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>tripleo.elijah</groupId>
+            <artifactId>elijah-cegont-upper</artifactId>
+            <version>2025.04.21</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jetbrains</groupId>
+                    <artifactId>annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.smallrye.reactive</groupId>
+                    <artifactId>mutiny</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>33.5.0-jre</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>26.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.19.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service-annotations</artifactId>
+            <version>1.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>tripleo.elijah</groupId>
+            <artifactId>elevated-potential.core.queues</artifactId>
+<!--            <version>${revision}</version>-->
+            <version>elevated-potential.l251121</version>
+<!--            <scope>compile</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>tripleo.elijah</groupId>
+            <artifactId>elevated-potential.s.g_l251121</artifactId>
+<!--            <version>${revision}</version>-->
+            <version>elevated-potential.l251121</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>tripleo.elijah</groupId>
+            <artifactId>elevated-potential.s.debugflags_l251121</artifactId>
+<!--            <version>${revision}</version>-->
+            <version>elevated-potential.l251121</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <!--<source>../xxx-model-status/src/main/java</source>-->
+                                <!--<source>../xxx-annotations/src/main/java</source>-->
+                                <!--<source>./dlog/src/main/java</source>-->
+                                <source>./elijah-core-api/src/main/java</source>
+                                <source>./src/main/java</source>
+                                <source>./elijah-ek/src/main/java</source>
+                                <source>./elijah-nextgen-outputstatement/src/main/java</source>
+                                <source>./elijah-stateful/src/main/java</source>
+                                <source>./elijah-util/src/main/java</source>
+                                <source>./tripleo-reactive/src/main/java</source>
+                                <source>./tripleo-small/src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--<repositories>-->
+    <!--    <repository>-->
+    <!--        <id>jitpack.io</id>-->
+    <!--        <url>https://jitpack.io</url>-->
+    <!--    </repository>-->
+    <!--</repositories>-->
+</project>
