@@ -8,12 +8,6 @@
 	<name>elijah-cegont-upper</name>
 	<url>https://github.com/elijah-tng/cegont-upper</url>
 
-    <parent>
-        <groupId>tripleo.elijah</groupId>
-        <artifactId>elevated.parts.core-api</artifactId>
-        <version>elevated-potential.l251121</version>
-    </parent>
-
 	<groupId>tripleo.elijah</groupId>
 	<artifactId>elijah-cegont-upper</artifactId>
 	<version>2025.04.21</version>
@@ -41,12 +35,18 @@
 
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-
 		<javaVersion>17</javaVersion>
 
-		<downloadSources>true</downloadSources>
+		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+		<!--<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+
+		<!--<maven.compiler.release>${base.java.version}</maven.compiler.release>-->
+
+		<!--<error.prone.version>2.31.0</error.prone.version>-->
 	</properties>
 
 
@@ -111,7 +111,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>3.14.1</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
