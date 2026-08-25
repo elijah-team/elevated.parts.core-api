@@ -9,7 +9,7 @@
 	<description>xxx-core-api; might as well put the rest here as well</description>
 
 	<groupId>tripleo.elijah</groupId>
-	<artifactId>elevated.parts.core-api</artifactId>
+	<artifactId>elevated-parts-core-api</artifactId>
 <!--	<version>${revision}</version>-->
 	<version>elevated-potential.l251121</version>
 
