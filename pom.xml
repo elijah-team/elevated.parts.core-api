@@ -557,19 +557,14 @@
 		<dependency>
 			<groupId>com.github.elijah-tng</groupId>
 			<artifactId>ghel-model-status</artifactId>
+			<!--??-->
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.elijah-tng</groupId>
-			<artifactId>cegont-upper</artifactId>
-			<version>2025.04.21</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>mutiny</artifactId>
-			<version>3.1.0</version>
-		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>io.smallrye.reactive</groupId>-->
+		<!--			<artifactId>mutiny</artifactId>-->
+		<!--			<version>3.1.0</version>-->
+		<!--		</dependency>-->
 
 		<!--
 		<dependency>
@@ -579,23 +574,23 @@
 		</dependency>
 		-->
 
-		<dependency>
-			<groupId>com.github.spotbugs</groupId>
-			<artifactId>spotbugs-annotations</artifactId>
-			<version>4.9.3</version>
-			<scope>compile</scope>
-		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>com.github.spotbugs</groupId>-->
+		<!--			<artifactId>spotbugs-annotations</artifactId>-->
+		<!--			<version>4.9.3</version>-->
+		<!--			<scope>compile</scope>-->
+		<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>2.1.0-alpha1</version>
-			<scope>compile</scope>
+			<artifactId>slf4j-nop</artifactId>
+			<version>2.0.17</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>2.1.0-alpha1</version>
+			<version>2.0.17</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -611,7 +606,6 @@
 			<artifactId>rxjava</artifactId>
 			<version>3.1.10</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.reactivestreams</groupId>
 			<artifactId>reactive-streams</artifactId>
@@ -619,12 +613,14 @@
 		</dependency>
 
 		<dependency>
+			<!--??-->
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.19.0</version>
 		</dependency>
 
 		<dependency>
+			<!--??-->
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.42</version>
@@ -633,8 +629,8 @@
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
-			<version>26.0.2-1</version>
-			<scope>compile</scope>
+			<version>26.1.0</version>
+			<!--<scope>compile</scope>-->
 		</dependency>
 
 		<dependency>
@@ -645,18 +641,20 @@
 		</dependency>
 
 		<dependency>
+			<!--??-->
 			<groupId>org.checkerframework</groupId>
 			<artifactId>checker-qual</artifactId>
 			<version>3.52.1</version>
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>5.20.0</version>
-			<scope>test</scope>
-		</dependency>
+		<!--no tests here-->
+		<!--		<dependency>-->
+		<!--			<groupId>org.mockito</groupId>-->
+		<!--			<artifactId>mockito-core</artifactId>-->
+		<!--			<version>5.20.0</version>-->
+		<!--			<scope>test</scope>-->
+		<!--		</dependency>-->
 
 	</dependencies>
 
