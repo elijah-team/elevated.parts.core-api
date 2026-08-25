@@ -43,6 +43,7 @@
 	</properties>
 
 	<modules>
+		<module>./cegont-upper</module>
 		<module>./elevated-potential.core.queues</module>
 		<!--<module>./elevated-potential.fluffy.extra</module>-->
 		<module>./elevated-potential.s.g_l251121</module>
