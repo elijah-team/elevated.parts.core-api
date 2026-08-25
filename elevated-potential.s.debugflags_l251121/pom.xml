@@ -10,15 +10,24 @@
 		Nonsense to hold no-actual-code debug flags
 	</description>
 
+<!--
 	<parent>
         <groupId>tripleo.elijah</groupId>
         <artifactId>elevated-potential</artifactId>
         <version>${revision}</version>
     </parent>
+-->
+	<parent>
+		<groupId>tripleo.elijah</groupId>
+		<artifactId>elevated.parts.core-api</artifactId>
+		<version>elevated-potential.l251121</version>
+	</parent>
+
 
     <groupId>tripleo.elijah</groupId>
     <artifactId>elevated-potential.s.debugflags_l251121</artifactId>
-    <version>${revision}</version>
+<!--    <version>${revision}</version>-->
+	<version>elevated-potential.l251121</version>
 
 	<build>
 		<plugins>
