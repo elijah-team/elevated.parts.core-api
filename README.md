@@ -1,12 +1,12 @@
 # elevated.parts.core-api
 
-Annoy ourselves less (:eyes: jitpack)
+Annoy ourselves less
 
 Just throw some sheti up
 
 ```shell
 [INFO] You have 18487 Checkstyle violations.
-[INFO] Saved Build to local file: /Users/u6521/IdeaProjects/elevated.parts.core-api/build-cache/v1/tripleo.elijah/elevated-potential-core-api-xxx/9299b4fc83c627c1/local/buildinfo.xml
+[INFO] Saved Build to local file: /home/user/Git/elevated.parts.core-api/build-cache/v1/tripleo.elijah/elevated-potential-core-api-xxx/9299b4fc83c627c1/local/buildinfo.xml
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary for elevated.parts.core-api elevated-potential.l251121:
 [INFO]
